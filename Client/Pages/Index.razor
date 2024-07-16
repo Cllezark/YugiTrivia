@@ -1,3 +1,39 @@
 ﻿@page "/"
+@using YugiTrivia.Shared;
+@inject HttpClient http;
 
-<h1>Hello, world!</h1>
+
+
+<button @onclick="GetRandomCard"> Get Random Card</button>
+
+<br />
+@if (randomCard is null)
+{
+    
+}
+else
+{
+    <img src=@randomCard.Artwork/>
+    <ul>
+        <li>
+            Name: @randomCard.Name
+        </li>
+        <li>
+            Type: @randomCard.Type
+        </li>
+        <li>
+            Release Date: @randomCard.TcgDate
+        </li>
+    </ul>
+}
+
+@code {
+    TriviaCard randomCard = new TriviaCard();
+
+    protected async Task GetRandomCard()
+    {
+        randomCard = await http.GetFromJsonAsync<TriviaCard>("api/test");
+    }
+
+
+}
