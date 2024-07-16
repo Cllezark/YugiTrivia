@@ -1,5 +1,7 @@
 ﻿namespace YugiTrivia.Server.Contexts;
 using Microsoft.EntityFrameworkCore;
+using YugiTrivia.Shared;
+
 public class SQLiteContext : DbContext
 {
     protected readonly IConfiguration _configuration;
@@ -14,4 +16,7 @@ public class SQLiteContext : DbContext
         options.UseSqlite(_configuration.GetConnectionString("CardsDB"));
     }
 
+    DbSet<TriviaCard> triviaCards { get; set; }
+
+    DbSet<CardSet> cardSets { get; set; }
 }
