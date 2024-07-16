@@ -1,9 +1,15 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using YugiTrivia.Server.Contexts;
+using YugiTrivia.Server.Interfaces;
+using YugiTrivia.Server.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<DapperContext>();
+builder.Services.AddScoped<ITestRepository, TestRepository>();
 
 var app = builder.Build();
 
