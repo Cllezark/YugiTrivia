@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiTrivia.Server", "Server\YugiTrivia.Server.csproj", "{73258C62-DD54-4AAF-9638-BCCD0C4D3C04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YugiTrivia.Server", "Server\YugiTrivia.Server.csproj", "{73258C62-DD54-4AAF-9638-BCCD0C4D3C04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiTrivia.Client", "Client\YugiTrivia.Client.csproj", "{FB1548A0-6B9A-42D6-B2E9-F440B4BAD113}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YugiTrivia.Client", "Client\YugiTrivia.Client.csproj", "{FB1548A0-6B9A-42D6-B2E9-F440B4BAD113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YugiTrivia.Shared", "Shared\YugiTrivia.Shared.csproj", "{CAC76F00-0C75-453B-9BB5-A9BCFC01C861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YugiTrivia.Shared", "Shared\YugiTrivia.Shared.csproj", "{CAC76F00-0C75-453B-9BB5-A9BCFC01C861}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
