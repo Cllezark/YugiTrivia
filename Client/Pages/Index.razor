@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using YugiTrivia.Shared;
+@using YugiTrivia.Client.Shared;
+
 @inject HttpClient http;
 
 
@@ -9,27 +11,22 @@
 <br />
 @if (randomCard is null)
 {
-    
+    <p>...</p>
 }
 else
 {
-    <img src=@randomCard.Artwork/>
-    <ul>
-        <li>
-            Name: @randomCard.Name
-        </li>
-        <li>
-            Type: @randomCard.Type
-        </li>
-        <li>
-            Release Date: @randomCard.TcgDate
-        </li>
-    </ul>
+    <ItemCard
+    id=@randomCard.Id
+    name=@randomCard.Name
+    type=@randomCard.Type
+    tcgDate=@randomCard.TcgDate
+    artwork=@randomCard.Artwork>
+</ItemCard>
+
 }
 
 @code {
     TriviaCard randomCard = new TriviaCard();
-
     protected async Task GetRandomCard()
     {
         randomCard = await http.GetFromJsonAsync<TriviaCard>("api/test");

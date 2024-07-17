@@ -1,0 +1,37 @@
+﻿<div class="itemCard">
+    <div class="front">
+        <div class="top">
+            <div class="label">
+                @name
+            </div>
+            <div class="description">
+                @type
+            </div>
+        </div>
+        <div class="image" style="background-image: url(@artwork)">
+             
+        </div>
+        <div class="bottom">
+            <span>@tcgDate</span>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public string name { get; set; }
+    [Parameter]
+    public long id { get; set; }
+    [Parameter]
+    public string type { get; set; }
+    [Parameter]
+    public string tcgDate { get; set; } 
+    [Parameter]
+    public string artwork { get; set; }
+
+    public bool? draggable { get; set; }
+
+    public bool? flipped { get; set; }
+}
