@@ -4,8 +4,6 @@
 
 @inject HttpClient http;
 
-
-
 <button @onclick="GetRandomCard"> Get Random Card</button>
 
 <br />
@@ -27,6 +25,10 @@ else
 
 @code {
     TriviaCard randomCard = new TriviaCard();
+    protected override async Task OnInitializedAsync()
+    {
+       await GetRandomCard();
+    }
     protected async Task GetRandomCard()
     {
         randomCard = await http.GetFromJsonAsync<TriviaCard>("api/test");
