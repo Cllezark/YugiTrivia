@@ -1,20 +1,44 @@
-﻿<div class="itemCard">
-    <div class="front">
-        <div class="top">
-            <div class="label">
-                @name
+﻿<div class="itemCard" @onclick="ToggleCardFlip">
+    @if (!isFlipped)
+    {
+        <div class="front">
+            <div class="top">
+                <div class="label">
+                    @name
+                </div>
+                <div class="description">
+                    @type
+                </div>
             </div>
-            <div class="description">
-                @type
+            <div class="image" style="background-image: url(@artwork)">
+            </div>
+            <div class="bottom">
+                <span>@tcgDate</span>
             </div>
         </div>
-        <div class="image" style="background-image: url(@artwork)">
-             
+    }
+    else
+    {
+        <div class="back">
+            <div class="top">
+                <div class="label">
+                    @name
+                </div>
+                <div class="date">
+                    Released: @tcgDate
+                    </div>
+                <div class="description">
+                    @type
+                </div>
+            </div>
+           
+           
+            <div class="bottom">
+                <a href="https://www.yugipedia.com/wiki/@name" class="wikipedia" target="_blank" rel="noopener noreferrer">Yugipedia</a>
+            </div>
         </div>
-        <div class="bottom">
-            <span>@tcgDate</span>
-        </div>
-    </div>
+    }
+
 </div>
 
 
@@ -31,7 +55,10 @@
     [Parameter]
     public string artwork { get; set; }
 
-    public bool? draggable { get; set; }
+    public bool isFlipped = false;
 
-    public bool? flipped { get; set; }
+    private void ToggleCardFlip()
+    {
+        isFlipped = !isFlipped;
+    }
 }
